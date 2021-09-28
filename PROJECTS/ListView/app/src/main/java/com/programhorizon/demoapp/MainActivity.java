@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(MainActivity.this, "Friend Clicked: " + myFriends.get(position), Toast.LENGTH_SHORT).show();
+                Log.i("CLICKED", "Friend Clicked: " + myFriends.get(position)); // adding comment to when button clicked
             }
         });
 
