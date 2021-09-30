@@ -1,10 +1,12 @@
 package com.programhorizon.eggtimer;
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -12,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     SeekBar timerSeekBar;
     TextView timerText;
+    Button controllerButton;
+    Boolean counterIsActive = false;
+    CountDownTimer countdownTimer;
 
     public void updateTimer(int secondsLeft){
 
@@ -21,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         String secondsString = Integer.toString(seconds);
 
         // if timer ends in "0" for seconds change it to where there is two zeros instead of one
-        if(secondsString == "0"){
-            secondsString = "00";
+        if (seconds <= 9){
+            secondsString = "0" + secondsString;
         }
 
         timerText = (TextView)findViewById(R.id.timerTextView);
@@ -30,25 +35,46 @@ public class MainActivity extends AppCompatActivity {
         timerText.setText(Integer.toString(mins) + ":" + secondsString); // turning ints to text
     }
 
+    public void resetTimer(){
+        timerText.setText("0:00");
+        timerSeekBar.setProgress(30);
+        countdownTimer.cancel();
+        controllerButton.setText("GO!");
+        timerSeekBar.setEnabled(true);
+        counterIsActive = false;
+    }
+
     public void controlTimer(View v){
 
-        new CountDownTimer(timerSeekBar.getProgress() * 1000, 1000){
+        if(counterIsActive == false) {
 
-            @Override
-            public void onTick(long millisUntilFinished){
 
-                updateTimer((int) millisUntilFinished / 1000); // casting to int then divided by 1000 to get seconds
+            counterIsActive = true;
+            timerSeekBar.setEnabled(false);
+            controllerButton.setText("STOP");
 
-            }
+            countdownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000 + 100, 1000) {
 
-            @Override
-            public void onFinish(){
+                @Override
+                public void onTick(long millisUntilFinished) {
 
-                Log.i("Finished", "Timer done");
+                    updateTimer((int) millisUntilFinished / 1000); // casting to int then divided by 1000 to get seconds
 
-            }
-        }.start();
+                }
 
+                @Override
+                public void onFinish() {
+
+                    timerText.setText("0:00");
+                    Log.i("Finished", "Timer done");
+                    MediaPlayer mPlayer = MediaPlayer.create(getApplicationContext(), R.raw.swish_2); // put getApplicationContext because it is in a function
+                    mPlayer.start();
+                    resetTimer();
+                }
+            }.start();
+        } else{
+            resetTimer();
+        }
     }
 
     @Override
@@ -59,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         timerSeekBar = (SeekBar)findViewById(R.id.timerSeekBar);
         timerSeekBar.setMax(600); // in seconds so 10 minutes
         timerSeekBar.setProgress(30); // start progress at 30 seconds
+
+        controllerButton = (Button)findViewById(R.id.controllerButton);
 
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
