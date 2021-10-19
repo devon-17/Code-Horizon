@@ -1,4 +1,4 @@
-package com.example.codehorizon;
+package com.example.codehorizonapplication;
 
 import org.junit.Test;
 
