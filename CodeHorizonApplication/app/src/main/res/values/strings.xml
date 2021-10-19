@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CodeHorizonApplication</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="back4app_app_id">jteiKiQ5OoqiMVJocukX71ofh9n60ylOidiEsLGE</string>
+    <string name="back4app_client_key">sGqqL5Dc1wHfENWwmBKbxjuYEapHyye5V9JDEdXA</string>
+
 </resources>
