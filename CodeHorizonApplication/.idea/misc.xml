@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/itisd/Desktop/AndroidStudioProjects/Code-Horizon/CodeHorizonApplication/app/src/main/res/layout/activity_home.xml" value="0.276268115942029" />
         <entry key="..\:/Users/itisd/Desktop/AndroidStudioProjects/Code-Horizon/CodeHorizonApplication/app/src/main/res/layout/activity_main.xml" value="0.22077922077922077" />
+        <entry key="..\:/Users/itisd/Desktop/AndroidStudioProjects/Code-Horizon/CodeHorizonApplication/app/src/main/res/layout/activity_sign_in.xml" value="0.276268115942029" />
         <entry key="..\:/Users/itisd/Desktop/AndroidStudioProjects/Code-Horizon/CodeHorizonApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/itisd/Documents/Code-Horizon/CodeHorizonApplication/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/itisd/Documents/Code-Horizon/CodeHorizonApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />

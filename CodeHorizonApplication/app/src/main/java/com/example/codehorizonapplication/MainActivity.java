@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        signInBtn.setOnClickListener(new View.OnClickListener() {
+
+        signText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+            }
+        });
+
+        signBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createUser();
@@ -58,18 +68,25 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(MainActivity.this, "Registered Successfully!", Toast.LENGTH_LONG);
-                                startActivity(new Intent(MainActivity.this, SignInActivity.this));
+                                Toast.makeText(MainActivity.this, "Registered Successfully!", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                                finish();
+                                Log.i("Registration", "REGISTRATION SUCCESS");
                             }
-                        });
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this, "Sign Up Error, Try Again", Toast.LENGTH_LONG).show();
+                    }
+                });
 
             }else{
-                mPass.setError("Empty Field Not Allowed");
+                signPass.setError("Empty Field Not Allowed");
             }
         }else if(email.isEmpty()){
-            mEmail.setError("Empty Field Not Allowed");
+            signEmail.setError("Empty Field Not Allowed");
         }else{
-            mEmail.setError("Please Enter Correct Email");
+            signEmail.setError("Please Enter A Valid Email");
         }
     }
 }
