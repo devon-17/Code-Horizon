@@ -5,11 +5,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/signUpText"
+        android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="SIGN UP"
+        android:text="LOGIN"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.172" />
 
     <ImageView
-        android:id="@+id/logoSignUp"
+        android:id="@+id/logo_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="350dp"
@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/ic_logo" />
 
     <EditText
-        android:id="@+id/enterEmailSignUp"
+        android:id="@+id/email_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
@@ -45,10 +45,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_pass" />
 
     <EditText
-        android:id="@+id/enterPasswordSignUp"
+        android:id="@+id/pass_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
@@ -61,27 +61,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterEmailSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/email_log" />
 
     <Button
-        android:id="@+id/signUpBtn"
+        android:id="@+id/log_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="144dp"
         android:background="@color/black"
         android:fontFamily="serif-monospace"
-        android:text="Sign Up"
+        android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/signInText"
+        android:id="@+id/sign_up_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
         android:fontFamily="serif-monospace"
-        android:text="Already Have An Account? Sign In Here"
+        android:text="Don't Have An Account? Sign Up Here"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

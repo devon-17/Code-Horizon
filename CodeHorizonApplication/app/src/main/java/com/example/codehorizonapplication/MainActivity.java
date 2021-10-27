@@ -19,9 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText mEmail, mPass;
-    private TextView mSignin;
-    private Button signInBtn;
+    private EditText signEmail, signPass;
+    private TextView signText;
+    private Button signBtn;
 
     private FirebaseAuth auth;
 
@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        mEmail = findViewById(R.id.enterEmailSignUp);
-        mPass = findViewById(R.id.enterPasswordSignUp);
-        mSignin = findViewById(R.id.signInText);
-        signInBtn = findViewById(R.id.signUpBtn);
+        signEmail = findViewById(R.id.email_sign);
+        signPass = findViewById(R.id.pass_sign);
+        signText = findViewById(R.id.signInText);
+        signBtn = findViewById(R.id.signUpBtn);
 
         auth = FirebaseAuth.getInstance();
 
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createUser(){
-        String email = mEmail.getText().toString();
-        String pass = mEmail.getText().toString();
+        String email = signEmail.getText().toString();
+        String pass = signPass.getText().toString();
 
         if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             if(!pass.isEmpty()){
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(SignUpActivity.this, "Registered Successfully!", Toast.LENGTH_LONG);
-                                startActivity(new Intent(SignUpActivity.this, MainActivity.this));
+                                Toast.makeText(MainActivity.this, "Registered Successfully!", Toast.LENGTH_LONG);
+                                startActivity(new Intent(MainActivity.this, SignUpActivity.this));
                             }
                         });
 
