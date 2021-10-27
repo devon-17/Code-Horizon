@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         signEmail = findViewById(R.id.email_sign);
         signPass = findViewById(R.id.pass_sign);
         signText = findViewById(R.id.signInText);
-        signBtn = findViewById(R.id.signUpBtn);
+        signBtn = findViewById(R.id.sign_btn);
 
         auth = FirebaseAuth.getInstance();
 
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Toast.makeText(MainActivity.this, "Registered Successfully!", Toast.LENGTH_LONG);
-                                startActivity(new Intent(MainActivity.this, SignUpActivity.this));
+                                startActivity(new Intent(MainActivity.this, SignInActivity.this));
                             }
                         });
 
