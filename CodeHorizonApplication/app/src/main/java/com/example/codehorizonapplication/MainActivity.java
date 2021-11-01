@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         signBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                createUser();
-            }
+            public void onClick(View view) { createUser(); }
         });
 
     }
@@ -77,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(MainActivity.this, "Sign Up Error, Try Again", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
                     }
                 });
 
