@@ -13,6 +13,7 @@
         android:fontFamily="serif-monospace"
         android:text="SIGN UP"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,12 +26,12 @@
 
     <ImageView
         android:id="@+id/logo_sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="350dp"
+        android:layout_width="114dp"
+        android:layout_height="119dp"
+        android:layout_marginBottom="424dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_logo" />
 
@@ -85,8 +86,9 @@
         android:layout_marginBottom="80dp"
         android:fontFamily="serif-monospace"
         android:text="Already Have An Account? Sign In Here"
-        android:textStyle="bold"
+        android:textColor="#000000"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
