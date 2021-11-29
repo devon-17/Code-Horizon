@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(MainActivity.this, "Registered Successfully!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "< Registered Successfully! />", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
                                 finish();
                                 Log.i("Registration", "REGISTRATION SUCCESS");
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this, "Sign Up Error, Try Again", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "< Sign Up Error, Try Again />", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivity.this, MainActivity.class));
                     }
                 });

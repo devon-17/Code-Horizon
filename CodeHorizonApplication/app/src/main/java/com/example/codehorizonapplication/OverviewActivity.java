@@ -8,10 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class OverviewActivity extends HomeActivity {
+public class OverviewActivity extends AppCompatActivity {
 
     public Button backBtn;
-    public boolean isBackBtnClicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

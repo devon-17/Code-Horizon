@@ -3,6 +3,7 @@ package com.example.codehorizonapplication;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Debug;
@@ -21,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     public Button overviewBtn;
     public Button varBtn;
     FirebaseAuth auth;
-
+    boolean overviewDone;
 
 
     @Override
@@ -33,6 +34,8 @@ public class HomeActivity extends AppCompatActivity {
         overviewBtn = findViewById(R.id.overviewBtn);
         varBtn = findViewById(R.id.varBtn);
         auth = FirebaseAuth.getInstance();
+
+        overviewDone = false;
 
         signOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,23 +49,29 @@ public class HomeActivity extends AppCompatActivity {
         overviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, OverviewActivity.class));
+                Intent overviewBtnIntent = new Intent(HomeActivity.this, OverviewActivity.class);
+                startActivity(overviewBtnIntent);
             }
         });
 
-        if(getIntent().hasExtra("state")){
-            if (getIntent().getStringExtra("state").equals("enable")){
+        if (getIntent().hasExtra("state")) {
+            if (getIntent().getStringExtra("state").equals("enable")) {
+                overviewDone = true;
                 varBtn.setEnabled(true);
-
-            }else{
+            } else {
                 varBtn.setEnabled(false);
             }
-        }else{
+        } else {
             varBtn.setEnabled(false);
         }
-    }
-    public void varAct(View view){
-        Intent intent = new Intent(HomeActivity.this, VariablesActivity.class);
-        startActivity(intent);
+
+        varBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent varbiesButtonIntent = new Intent(HomeActivity.this, VariablesActivity.class);
+                startActivity(varbiesButtonIntent);
+                Log.i("Variable Button", "Going to Variable Activity");
+            }
+        });
     }
 }
