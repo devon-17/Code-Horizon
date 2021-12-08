@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="codeHorizonOrange">#FF5733</color>
+    <color name="wrongAnswerRed">#CC1C1C</color>
+    <color name="rightAnswerGreen">#035000</color>
 </resources>

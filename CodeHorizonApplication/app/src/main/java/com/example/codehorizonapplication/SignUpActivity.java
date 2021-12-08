@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private EditText signEmail, signPass;
     private TextView signText;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_up);
 
 
         signEmail = findViewById(R.id.email_sign);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         signText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
             }
         });
 
@@ -66,16 +66,16 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(MainActivity.this, "< Registered Successfully! />", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                                Toast.makeText(SignUpActivity.this, "< Registered Successfully! />", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
                                 finish();
                                 Log.i("Registration", "REGISTRATION SUCCESS");
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this, "< Sign Up Error, Try Again />", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        Toast.makeText(SignUpActivity.this, "< Sign Up Error, Try Again />", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SignUpActivity.this, SignUpActivity.class));
                     }
                 });
 
