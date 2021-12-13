@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+    body{
+        background-color: #1a1a1a;
+        color: rgb(0, 0, 0);
+        font-family: 'Source Code Pro', monospace;
+        font-size: 1.5em;
+        text-align: center;
+    }
 
     #moveableElement {
         position: absolute;
@@ -21,10 +34,12 @@
         z-index: 10;
         background-color: #ff5733;
         color: #fff;
+        font-family: 'Source Code Pro', monospace;
     }
 
-    .title, .subtitle {
-        text-align: center;
+    .ifStatementContent{
+        display: flex;
+        vertical-align: middle;
     }
 
     .code_type {
@@ -43,14 +58,14 @@
 
     <div id="moveableElement">
         <div id="moveableElementheader">IF STATMENT</div>
-        <p id="if_statement_content">choose one</p>
+        <p id="ifStatementContent">##########################</p>
     </div>
 
     <div id="dropdwon" align="center">
-        <select onchange="test(this)" id="code_type" >
+        <select onchange="changeCodeType(this)" id="code_type" >
             <option value="">--SELECT--</option>
             <option value="1">< Block Code /></option>
-            <option value="2">< Syntax Highlighting /></option>
+            <option value="2">< Syntax /></option>
         </select>
     </div>
 
