@@ -14,6 +14,7 @@ function changeCodeType(option) {
 
     var if_code_block = "when x happens something else happens";
     var if_syntax = "if (x) { y; }";
+    
     // change to proper text
     if (selected == "< Syntax />") {
         if_text.innerHTML = if_syntax;

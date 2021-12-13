@@ -26,6 +26,8 @@
         background-color: #ffffff;
         text-align: center;
         border: 1px solid #d3d3d3;
+        inline-size: 200px;
+        overflow-wrap: break-word;
     }
 
     #moveableElementheader {
@@ -37,14 +39,15 @@
         font-family: 'Source Code Pro', monospace;
     }
 
-    .ifStatementContent{
-        display: flex;
-        vertical-align: middle;
+    .title, .subtitle{
+        font-weight: bold;
+        color: #581845;
     }
+
 
     .code_type {
     align-items: center;
-}
+    }
 
 
 </style>
@@ -57,7 +60,7 @@
     <p class="subtitle">Click and hold to drag the element</p>
 
     <div id="moveableElement">
-        <div id="moveableElementheader">IF STATMENT</div>
+        <div id="moveableElementheader">IF STATEMENT</div>
         <p id="ifStatementContent">##########################</p>
     </div>
 
