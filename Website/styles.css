@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+body {
+  background-color: #1a1a1a;
+  color: rgb(0, 0, 0);
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#moveableElement {
+  position: absolute;
+  cursor: move;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(540%, 70%);
+  z-index: 9;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  inline-size: 200px;
+  overflow-wrap: break-word;
+}
+
+#moveableElementheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #ff5733;
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+}
+
+.title,
+.subtitle {
+  font-weight: bold;
+  color: #581845;
+}
+
+.code_type {
+  align-items: center;
+}
