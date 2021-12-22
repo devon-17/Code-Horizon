@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>CODE HORIZON</title>
+<title>Code Horizon: Home</title>
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,22 +11,31 @@
 
     <p class="subtitle">Click and hold to drag the element</p>
 
-    <div id="moveableElement">
-        <div id="moveableElementheader">IF STATEMENT</div>
-        <p id="ifStatementContent">##########################</p>
+    <div id="ifStatement">
+        <div id="ifStatementHeader">IF STATEMENT</div>
+        <p id="ifStatementContent">when happens x something else happens</p>
     </div>
 
-    <div id="dropdwon">
-        <select onchange="changeCodeType(this)" id="code_type" >
+    <div id="variables">
+        <div id="variablesHeader">VARIABLE</div>
+        <p id="variablesContent">Way to store information in different data types</p>
+    </div>
+
+    <div id="dropdown">
+        <select name="code_style_selection" id="code_style_selection" onchange="changeCodeType(this)" >
             <option value="">--SELECT--</option>
-            <option value="1">< Block Code /></option>
-            <option value="2">< Syntax /></option>
+            <option value="1" id="block_choice">Block Code</option>
+            <option value="2" id="syntax_choice">Syntax</option>
         </select>
     </div>
 
-<script src="moveable_element.js"></script>
-<script src="dropdown.js"></script>
+    <div>
+        <input type="number" id="input_a" onchange="checkInput()" placeholder="Enter number..." />
+    </div>
 
+
+    <script src="MoveableElement.js"></script>
+    <script src="Dropdown.js"></script>    
 </body>
 </div>
 </html>

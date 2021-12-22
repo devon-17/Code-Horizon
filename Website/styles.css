@@ -8,34 +8,87 @@ body {
   text-align: center;
 }
 
-#moveableElement {
+#ifStatement,
+#variables {
   position: absolute;
   cursor: move;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(540%, 70%);
   z-index: 9;
   background-color: #ffffff;
   text-align: center;
   border: 1px solid #d3d3d3;
   inline-size: 200px;
-  overflow-wrap: break-word;
 }
 
-#moveableElementheader {
+#ifStatement {
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(600%, 70%);
+}
+
+#variables {
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(200%, 70%);
+}
+
+#ifStatementHeader,
+#variablesHeader {
   padding: 10px;
   cursor: move;
   z-index: 10;
-  background-color: #ff5733;
   color: #fff;
   font-family: "Source Code Pro", monospace;
+}
+
+#ifStatementHeader {
+  background-color: #ff5733;
+}
+
+#variablesHeader {
+  background-color: #581845;
 }
 
 .title,
 .subtitle {
   font-weight: bold;
-  color: #581845;
+  color: #ff5733;
 }
 
-.code_type {
+select#code_style_selection {
   align-items: center;
+  font-size: 0.65em;
+  font-family: "Source Code Pro", monospace;
+  font-weight: bold;
+  text-align: center;
+  max-width: 200px;
+  min-width: 200px;
+  width: 200px !important;
+  max-height: 55px;
+  min-height: 55px;
+  height: 55px !important;
+}
+
+input#input_a {
+  /* placement of item */
+  display: flex;
+  align-items: left;
+  margin-left: 1em;
+  font-size: 1em;
+
+  /* text */
+  font-family: "Source Code Pro", monospace;
+  font-weight: bold;
+  text-align: center;
+
+  /* size */
+  max-width: 150px;
+  min-width: 150px;
+  width: 150px !important;
+  max-height: 55px;
+  min-height: 55px;
+  height: 55px !important;
+}
+
+::placeholder {
+  font-size: 0.5em;
+  text-align: center;
+  overflow-wrap: break-word;
 }

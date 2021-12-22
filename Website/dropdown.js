@@ -1,24 +1,32 @@
+var if_text = document.getElementById("ifStatementContent");
+var variables_text = document.getElementById("variablesContent");
+
+var ifCodeBlockText = "when happens x something else happens";
+var ifSyntaxText = "if (x) { y; }";
+var variablesCodeBlockText = "Way to store information in different data types";
+var variablesSyntaxText = "var x = 5;";
+
+var codeBlockChoice = document.getElementById("block_choice");
+var syntaxChoice = document.getElementById("syntax_choice");
+var blockText = codeBlockChoice.innerText;
+var syntaxText = syntaxChoice.innerText;
+
 function changeCodeType(option) {
+  checkInput();
 
-    var if_text = document.getElementById('ifStatementContent');
-    var selected = (option.options[option.selectedIndex].text);
-    // alert("You Chose: " + selected);
+  var selected = option.options[option.selectedIndex].text;
+  // change to proper text
+  if (selected == blockText) {
+    if_text.innerHTML = ifCodeBlockText;
+    variables_text.innerHTML = variablesCodeBlockText;
+  } else if (selected == syntaxText) {
+    if_text.innerHTML = ifSyntaxText;
+    variables_text.innerHTML = variablesSyntaxText;
+  }
+}
 
-
-    /*
-    const custom_style={
-        display: 'show',
-        color: "green"
-    }
-    */
-
-    var if_code_block = "when x happens something else happens";
-    var if_syntax = "if (x) { y; }";
-    
-    // change to proper text
-    if (selected == "< Syntax />") {
-        if_text.innerHTML = if_syntax;
-    } else if (selected == "< Block Code />") {
-        if_text.innerHTML = if_code_block;
-    }
+function checkInput() {
+  var inputA = document.getElementById("input_a").value;
+  ifCodeBlockText = "when " + inputA + " happens something else happens";
+  ifSyntaxText = "if (" + inputA + ") { y; }";
 }
