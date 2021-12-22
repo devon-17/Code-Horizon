@@ -29,4 +29,8 @@ function checkInput() {
   var inputA = document.getElementById("input_a").value;
   ifCodeBlockText = "when " + inputA + " happens something else happens";
   ifSyntaxText = "if (" + inputA + ") { y; }";
+
+  if (inputA == 2) {
+    alert("ENTERED TWO");
+  }
 }
