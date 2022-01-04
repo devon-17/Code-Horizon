@@ -11,7 +11,13 @@ var syntaxChoice = document.getElementById("syntax_choice");
 var blockText = codeBlockChoice.innerText;
 var syntaxText = syntaxChoice.innerText;
 
+var inputA;
+var inputB;
+
 function changeCodeType(option) {
+  inputA = document.getElementById("input_a").value;
+  inputB = document.getElementById("input_b").value;
+
   checkInput();
 
   var selected = option.options[option.selectedIndex].text;
@@ -23,14 +29,21 @@ function changeCodeType(option) {
     if_text.innerHTML = ifSyntaxText;
     variables_text.innerHTML = variablesSyntaxText;
   }
+
+  const sumText = document.createElement("p");
+  const node = document.createTextNode(
+    inputA + " + " + inputB + " = " + (parseInt(inputA) + parseInt(inputB))
+  );
+  sumText.appendChild(node);
+
+  const element = document.getElementById("sum_text");
+  element.appendChild(sumText);
 }
 
 function checkInput() {
-  var inputA = document.getElementById("input_a").value;
+  inputA = document.getElementById("input_a").value;
+  inputB = document.getElementById("input_b").value;
+
   ifCodeBlockText = "when " + inputA + " happens something else happens";
   ifSyntaxText = "if (" + inputA + ") { y; }";
-
-  if (inputA == 2) {
-    alert("ENTERED TWO");
-  }
 }

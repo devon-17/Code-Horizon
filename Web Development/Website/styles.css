@@ -66,7 +66,8 @@ select#code_style_selection {
   height: 55px !important;
 }
 
-input#input_a {
+input#input_a,
+input#input_b {
   /* placement of item */
   display: flex;
   align-items: left;
@@ -87,8 +88,22 @@ input#input_a {
   height: 55px !important;
 }
 
+input#input_b {
+  display: flex;
+  align-items: left;
+  margin-left: 1em;
+  margin-top: 1em;
+  font-size: 1em;
+}
+
 ::placeholder {
   font-size: 0.5em;
   text-align: center;
   overflow-wrap: break-word;
+}
+
+.sum_text text {
+  align-items: bottom;
+  font-size: 1.5em;
+  color: #ff5733;
 }
