@@ -3,14 +3,34 @@ Peach/Coral: FF6767
 Pink/Red: FF3D68
 Purple: A73489 */
 
-body {
-  margin: 0px;
+body{
+  margin: 0;
 }
 
-.title {
-  background-color: beige;
+h1{
+  margin-top: 0;
 }
 
-h1 {
-  margin-top: 0px;
+.top-container, .middle-container, .bottom-container {
+  height: 200px;
+  width: 200px
+}
+.top-container{
+  background-color: #FAAD80;
+  border: solid 10px;
+  padding: 20px;
+}
+.middle-container{
+  background-color: #FF6767;
+  border: solid 20px;
+  margin-left: 260px
+}
+.bottom-container{
+  background-color: #FF3D68;
+  border: solid 10px;
+  margin-left: 500px;
+}
+
+.pro-text{
+  text-decoration: underline;
 }
