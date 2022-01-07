@@ -1,3 +1,9 @@
 body {
   background-color: rgb(32, 31, 31);
 }
+
+#draggable {
+  width: 150px;
+  height: 150px;
+  padding: 0.5em;
+}
