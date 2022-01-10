@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(32, 31, 31);
+}
+
+.canvas-drag-and-drop {
+  margin-top: 70px;
+  margin-left: 10px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.inventory {
+  background-color: #212529;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.canvas {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+h3, .moveable-element {
+  border: 2px solid gray;
+  border-radius: 5px;
+  cursor: move;
+  padding: 5px;
+  margin-top: 75px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.row {
+  position: relative;
+  height: 100%;
+}
