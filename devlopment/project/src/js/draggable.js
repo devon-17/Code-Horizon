@@ -13,7 +13,7 @@ function init() {
   canvas.droppable({
     drop: function (event, ui) {
       var node = {
-        _id: new Date().getDay(),
+        _id: new Date().getTime(),
       };
 
       node.position.left -= tools.width();
@@ -52,9 +52,9 @@ function init() {
       // setting it properly in position on screen
       var dom = $(html)
         .css({
-          position: "absolute",
-          top: node.position.top,
-          left: node.position.left,
+          "position": "absolute",
+          "top": node.position.top,
+          "left": node.position.left,
         })
         .draggable({
           stop: function (event, ui) {
