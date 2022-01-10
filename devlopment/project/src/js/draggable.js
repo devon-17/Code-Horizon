@@ -1,7 +1,6 @@
 $(init);
 
 function init() {
-
   var diagram = [];
   var canvas = $(".canvas"); // getting canvas element
   var inventory = $(".inventory");
@@ -9,12 +8,12 @@ function init() {
   // making element in DOM moveable
   $(".moveable-element").draggable({
     // cloning the element
-    helper: "clone"
+    helper: "clone",
   });
   canvas.droppable({
-    drop: function(event, ui) {
+    drop: function (event, ui) {
       var node = {
-        _id: (new Date).getDay()
+        _id: new Date().getDay(),
       };
 
       node.position.left -= tools.width();
@@ -27,21 +26,18 @@ function init() {
       }
       diagram.push(node);
       renderDiagram(diagram);
-    }
+    },
   });
 
   function renderDiagram(diagram) {
-
     canvas.empty();
 
     var elementOne = $(".element-1");
     var elementTwo = $(".element-2");
     var elementThree = $(".element-3");
 
-
     for (var d in diagram) {
       var node = diagram[d];
-
 
       var html = "";
 
@@ -54,11 +50,25 @@ function init() {
       }
 
       // setting it properly in position on screen
-      var dom = $(html).css({
-        "position": "absolute",
-        "top": node.position.top,
-        "left": node.position.left
-      });
+      var dom = $(html)
+        .css({
+          position: "absolute",
+          top: node.position.top,
+          left: node.position.left,
+        })
+        .draggable({
+          stop: function (event, ui) {
+            console.log(ui);
+            var id = ui.helper.attr("id");
+            for (var i in diagram) {
+              if (diagram[i]._id == id) {
+                diagram[i].position.top = ui.position.top;
+                diagram[i].position.left = ui.position.left;
+              }
+            }
+          },
+        })
+        .attr("id", node._id);
       canvas.append(dom);
     }
   }
