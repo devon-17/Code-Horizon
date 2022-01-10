@@ -3,7 +3,7 @@ function init() {
   var diagram = [];
   var canvas = $(".canvas");
 
-  $(".moveable-element").draggable({
+  $(".inventory-element").draggable({
     helper: "clone",
   });
   canvas.droppable({
@@ -28,17 +28,19 @@ function init() {
   });
   function renderDiagram(diagram) {
     canvas.empty();
-
-    var elementOne = $("<h3/>", {
-      text: "someone.name",
-      class: ".purple",
-    });
+    canvas.append("<h2>Code Canvas</h2>");
+    var $gElem = $(
+      '<div class="moveable-element">' +
+      '<div class="moveable-element-header">IF STATEMENT</div>' +
+      '<p class="if-statement-content">when happens x something else happens</p>'+
+    '</div>'
+);
 
     for (var d in diagram) {
       var node = diagram[d];
       var html = "";
       if (node.type === "ELEMENT-1") {
-        html = elementOne;
+        html = $gElem;
       } else if (node.type === "ELEMENT-2") {
         html = "<h3>TOOL 2</h3>";
       } else if (node.type === "ELEMENT-3") {

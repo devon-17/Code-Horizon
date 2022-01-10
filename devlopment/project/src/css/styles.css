@@ -27,8 +27,7 @@ body {
   top: 0;
 }
 
-h3,
-.moveable-element {
+.inventory-element {
   border: 2px solid gray;
   border-radius: 5px;
   cursor: move;
@@ -36,6 +35,10 @@ h3,
   margin-top: 75px;
   white-space: nowrap;
   z-index: 2;
+  text-align: center;
+  inline-size: 250px;
+  position: relative;
+  left: 40px;
 }
 
 .row {
@@ -43,6 +46,21 @@ h3,
   height: 100%;
 }
 
-.purple {
-  background-color: blueviolet;
+.moveable-element {
+  position: absolute;
+  cursor: move;
+  z-index: 9;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  inline-size: 200px;
+  color: black;
+}
+
+.moveable-element-header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  color: #fff;
+  background-color: #ff5733;
 }
