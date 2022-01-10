@@ -1,60 +1,54 @@
 $(init);
-
 function init() {
   var diagram = [];
-  var canvas = $(".canvas"); // getting canvas element
-  var inventory = $(".inventory");
+  var canvas = $(".canvas");
 
-  // making element in DOM moveable
   $(".moveable-element").draggable({
-    // cloning the element
     helper: "clone",
   });
   canvas.droppable({
     drop: function (event, ui) {
       var node = {
         _id: new Date().getTime(),
+        position: ui.helper.position(),
       };
-
-      node.position.left -= tools.width();
+      node.position.left -= canvas.position().left;
       if (ui.helper.hasClass("element-1")) {
         node.type = "ELEMENT-1";
       } else if (ui.helper.hasClass("element-2")) {
         node.type = "ELEMENT-2";
       } else if (ui.helper.hasClass("element-3")) {
         node.type = "ELEMENT-3";
+      } else {
+        return;
       }
       diagram.push(node);
       renderDiagram(diagram);
     },
   });
-
   function renderDiagram(diagram) {
     canvas.empty();
 
-    var elementOne = $(".element-1");
-    var elementTwo = $(".element-2");
-    var elementThree = $(".element-3");
+    var elementOne = $("<h3/>", {
+      text: "someone.name",
+      class: ".purple",
+    });
 
     for (var d in diagram) {
       var node = diagram[d];
-
       var html = "";
-
       if (node.type === "ELEMENT-1") {
         html = elementOne;
       } else if (node.type === "ELEMENT-2") {
-        html = elementTwo;
+        html = "<h3>TOOL 2</h3>";
       } else if (node.type === "ELEMENT-3") {
-        html = elementThree;
+        html = "<h3>TOOL 3</h3>";
       }
-
-      // setting it properly in position on screen
       var dom = $(html)
         .css({
-          "position": "absolute",
-          "top": node.position.top,
-          "left": node.position.left,
+          position: "absolute",
+          top: node.position.top,
+          left: node.position.left,
         })
         .draggable({
           stop: function (event, ui) {

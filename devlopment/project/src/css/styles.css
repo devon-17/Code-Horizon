@@ -27,7 +27,8 @@ body {
   top: 0;
 }
 
-h3, .moveable-element {
+h3,
+.moveable-element {
   border: 2px solid gray;
   border-radius: 5px;
   cursor: move;
@@ -40,4 +41,8 @@ h3, .moveable-element {
 .row {
   position: relative;
   height: 100%;
+}
+
+.purple {
+  background-color: blueviolet;
 }
