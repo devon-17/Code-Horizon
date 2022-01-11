@@ -36,7 +36,7 @@ function init() {
       var elementOne =
         '<div class="moveable-element">' +
         '<div class="moveable-element-header orange">IF STATEMENT</div>' +
-        '<p class="if-statement-content">when happens x something else happens</p>' +
+        '<p class="if-statement-content">when <span class="if-statement-input">x</span> happens something else happens</p>' +
         "</div>";
 
       var html = "";

@@ -29,13 +29,20 @@
     <script src="js/jQuery/jquery.js"></script>
     <script src="js/jQuery/jquery-ui.js"></script>
     <script src="js/draggable.js"></script>
+    <script src="js/dropdown.js"></script>
 
     <title>Code Horizon -- Home</title>
   </head>
 
   <body>
     <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark font-monospace"
+      class="
+        navbar
+        fixed-top
+        navbar-expand-lg navbar-dark
+        bg-dark
+        font-monospace
+      "
     >
       <div class="container-fluid">
         <img
@@ -69,7 +76,11 @@
               >
                 Code Style
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul
+                id="dropdown"
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
                 <li><a class="dropdown-item" href="#">Block Code</a></li>
                 <li><a class="dropdown-item" href="#">Syntax</a></li>
                 <li>
@@ -98,7 +109,7 @@
       <div class="row">
         <div class="inventory col-3">
           <h2>Elements</h2>
-          <h3>Drag and Drop Elements in</h3>
+          <p>Drag & Drop Elements in</p>
           <h3 class="inventory-element element-1">IF STATEMENTS</h3>
           <h3 class="inventory-element element-2">VARIABLES</h3>
           <h3 class="inventory-element element-3">Element Three</h3>
