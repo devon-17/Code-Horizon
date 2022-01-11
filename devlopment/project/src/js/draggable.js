@@ -29,18 +29,19 @@ function init() {
   function renderDiagram(diagram) {
     canvas.empty();
     canvas.append("<h2>Code Canvas</h2>");
-    var $gElem = $(
-      '<div class="moveable-element">' +
-      '<div class="moveable-element-header">IF STATEMENT</div>' +
-      '<p class="if-statement-content">when happens x something else happens</p>'+
-    '</div>'
-);
 
     for (var d in diagram) {
       var node = diagram[d];
+
+      var elementOne =
+        '<div class="moveable-element">' +
+        '<div class="moveable-element-header orange">IF STATEMENT</div>' +
+        '<p class="if-statement-content">when happens x something else happens</p>' +
+        "</div>";
+
       var html = "";
       if (node.type === "ELEMENT-1") {
-        html = $gElem;
+        html = elementOne;
       } else if (node.type === "ELEMENT-2") {
         html = "<h3>TOOL 2</h3>";
       } else if (node.type === "ELEMENT-3") {

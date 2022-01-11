@@ -38,7 +38,7 @@ body {
   text-align: center;
   inline-size: 250px;
   position: relative;
-  left: 40px;
+  left: 90px;
 }
 
 .row {
@@ -62,5 +62,8 @@ body {
   cursor: move;
   z-index: 10;
   color: #fff;
+}
+
+.orange {
   background-color: #ff5733;
 }
