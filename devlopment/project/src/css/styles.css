@@ -67,3 +67,7 @@ body {
 .orange {
   background-color: #ff5733;
 }
+
+.cursor {
+  cursor: pointer;
+}
