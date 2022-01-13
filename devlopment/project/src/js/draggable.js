@@ -27,8 +27,15 @@ function init() {
     },
   });
   function renderDiagram(diagram) {
+    var canvasTitle = "<h2 class='title-text'>Code Canvas</h2>";
+    var console =
+      '<div class="console">' +
+      '<h2 class="title-text">Console</h2>' +
+      "</div>";
+
     canvas.empty();
-    canvas.append("<h2>Code Canvas</h2>");
+    canvas.append(canvasTitle);
+    canvas.append(console);
 
     for (var d in diagram) {
       var node = diagram[d];
@@ -36,19 +43,19 @@ function init() {
       var ifStatement =
         '<div class="moveable-element">' +
         '<div class="moveable-element-header orange">IF STATEMENT</div>' +
-        '<p class="if-statement-content">when x happens something else happens</p>' +
+        '<p class="if-statement-content">if something happens then something else happens</p>' +
         "</div>";
 
       var variables =
         '<div class="moveable-element">' +
         '<div class="moveable-element-header purple">VARIABLES</div>' +
-        '<p class="variables-content">a way to easily store data with a semantic name of youre choosing</p>' +
+        '<p class="variables-content">A way to easily store data with a semantic name of your choosing</p>' +
         "</div>";
 
       var forLoops =
         '<div class="moveable-element">' +
         '<div class="moveable-element-header red-pink">FOR LOOPS</div>' +
-        '<p class="for-loop-content">easy flowing way to control and specify iteration</p>' +
+        '<p class="for-loop-content">A way to easily specify and control iteration</p>' +
         "</div>";
 
       var html = "";
