@@ -71,3 +71,11 @@ body {
 .cursor {
   cursor: pointer;
 }
+
+.purple {
+  background-color: #581845;
+}
+
+.red-pink {
+  background-color: #c70039;
+}

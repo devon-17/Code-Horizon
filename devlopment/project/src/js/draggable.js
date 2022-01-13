@@ -33,19 +33,31 @@ function init() {
     for (var d in diagram) {
       var node = diagram[d];
 
-      var elementOne =
+      var ifStatement =
         '<div class="moveable-element">' +
         '<div class="moveable-element-header orange">IF STATEMENT</div>' +
         '<p class="if-statement-content">when <span class="if-statement-input">x</span> happens something else happens</p>' +
         "</div>";
 
+      var variables =
+        '<div class="moveable-element">' +
+        '<div class="moveable-element-header purple">VARIABLES</div>' +
+        '<p class="variables-content">a way to easily store data with a semantic name of youre choosing</p>' +
+        "</div>";
+
+      var forLoops =
+        '<div class="moveable-element">' +
+        '<div class="moveable-element-header red-pink">FOR LOOPS</div>' +
+        '<p class="for-loop-content">easy flowing way to control and specify iteration</p>' +
+        "</div>";
+
       var html = "";
       if (node.type === "ELEMENT-1") {
-        html = elementOne;
+        html = ifStatement;
       } else if (node.type === "ELEMENT-2") {
-        html = "<h3>TOOL 2</h3>";
+        html = variables;
       } else if (node.type === "ELEMENT-3") {
-        html = "<h3>TOOL 3</h3>";
+        html = forLoops;
       }
       var dom = $(html)
         .css({
