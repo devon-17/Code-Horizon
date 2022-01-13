@@ -1,7 +1,7 @@
 $(init);
 
 function init() {
-  var dropdown = $("#dropdown li");
+  var dropdown = $(".nav-bar-dropdown li");
   dropdown.click(function () {
     var selText = $(this).text();
     // $("#tableButton").text(selText); //Using Jquery
