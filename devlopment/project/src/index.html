@@ -68,7 +68,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle text-light"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -95,7 +95,36 @@
               </ul>
             </li>
           </ul>
-          <form class="d-flex">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Lessons
+            </a>
+            <ul
+              id="dropdown"
+              class="dropdown-menu nav-bar-dropdown"
+              aria-labelledby="navbarDropdown"
+            >
+              <li>
+                <p class="dropdown-item cursor block-code">"Hello World";</p>
+              </li>
+              <li><p class="dropdown-item cursor syntax">Pong</p></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Future Lesson?</a>
+              </li>
+            </ul>
+          </li>
+          <!-- search item -->
+          <!-- <form class="d-flex">
             <input
               class="form-control me-2"
               type="search"
@@ -103,7 +132,7 @@
               aria-label="Search"
             />
             <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
