@@ -1,0 +1,19 @@
+body {
+  background-color: dimgray;
+}
+#pong {
+  border: 2px solid #fff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.speed-input {
+  position: absolute;
+  top: 22rem;
+  left: 11rem;
+  width: 20%;
+}
