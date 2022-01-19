@@ -25,6 +25,11 @@ var Ball = {
   },
 };
 
+function changeUserInput() {
+  var speedInput = $(".speed-change");
+  Paddle.speed(speedInput);
+}
+
 // The paddle object (The two lines that move up and down)
 var Paddle = {
   new: function (side) {
@@ -59,7 +64,7 @@ var Game = {
     this.running = this.over = false;
     this.turn = this.paddle;
     this.timer = this.round = 0;
-    this.color = "#2c3e50";
+    this.color = "#1f1f20";
 
     Pong.menu();
     Pong.listen();
