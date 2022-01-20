@@ -22,7 +22,7 @@ const ball = {
   radius: 10,
   velocityX: 5,
   velocityY: 5,
-  speed: 7,
+  speed: 7, // speed: userSpeedInput;
   color: "WHITE",
 };
 
@@ -79,16 +79,25 @@ function getMousePos(evt) {
   user.y = evt.clientY - rect.top - user.height / 2;
 }
 
-function speedInput() {}
+function changeSpeed() {
+  var userSpeedInput = parseInt(
+    document.getElementByClassName("user-speed").value
+  );
+  ball.speed = userSpeedInput;
+  alert(ball.speed);
+}
 
 // when COM or USER scores, we reset the ball
 function resetBall() {
-  var userSpeedInput = document.getElementsByClassName("user-speed").value;
-
+  var userSpeedInput = parseInt(
+    document.getElementByClassName("user-speed").value
+  );
+  if (!ball) return;
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
   ball.velocityX = -ball.velocityX;
   ball.speed = userSpeedInput;
+  alert(ball.speed);
 }
 
 // draw the net
