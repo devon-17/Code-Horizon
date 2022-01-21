@@ -4,6 +4,11 @@ const canvas = document.getElementById("pong");
 // getContext of canvas = methods and properties to draw and do a lot of thing to the canvas
 const ctx = canvas.getContext("2d");
 
+// get the value of the user input
+var userSpeedInput = parseInt(document.getElementById("user-speed").value);
+// speed btn
+const speedBtn = document.getElementById("speed-btn");
+
 // load sounds
 let hit = new Audio();
 let wall = new Audio();
@@ -22,7 +27,7 @@ const ball = {
   radius: 10,
   velocityX: 5,
   velocityY: 5,
-  speed: 7, // speed: userSpeedInput;
+  speed: userSpeedInput, // speed: userSpeedInput;
   color: "WHITE",
 };
 
@@ -79,19 +84,8 @@ function getMousePos(evt) {
   user.y = evt.clientY - rect.top - user.height / 2;
 }
 
-function changeSpeed() {
-  var userSpeedInput = parseInt(
-    document.getElementByClassName("user-speed").value
-  );
-  ball.speed = userSpeedInput;
-  alert(ball.speed);
-}
-
 // when COM or USER scores, we reset the ball
 function resetBall() {
-  var userSpeedInput = parseInt(
-    document.getElementByClassName("user-speed").value
-  );
   if (!ball) return;
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
