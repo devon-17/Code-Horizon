@@ -5,9 +5,17 @@ const canvas = document.getElementById("pong");
 const ctx = canvas.getContext("2d");
 
 // get the value of the user input
-var userSpeedInput = parseInt(document.getElementById("user-speed").value);
-// speed btn
-const speedBtn = document.getElementById("speed-btn");
+var speedInput = parseInt(document.getElementById("user-speed").value);
+
+// get the input field value
+var speedField = document.getElementById("user-speed");
+
+var paddleHeightInput = parseInt(
+  document.getElementById("user-paddle-height").value
+);
+
+// get the input field value
+var paddleHeightField = document.getElementById("user-paddle-height");
 
 // load sounds
 let hit = new Audio();
@@ -20,6 +28,14 @@ wall.src = "sounds/wall.mp3";
 comScore.src = "sounds/comScore.mp3";
 userScore.src = "sounds/userScore.mp3";
 
+speedField.addEventListener("change", (e) => {
+  userSpeedInput = parseInt(e.target.value);
+});
+
+paddleHeightField.addEventListener("change", (e) => {
+  userPaddleHeightInput = parseInt(e.target.value);
+});
+
 // Ball object
 const ball = {
   x: canvas.width / 2,
@@ -27,7 +43,7 @@ const ball = {
   radius: 10,
   velocityX: 5,
   velocityY: 5,
-  speed: userSpeedInput, // speed: userSpeedInput;
+  speed: speedInput, // speed: userSpeedInput;
   color: "WHITE",
 };
 
@@ -36,7 +52,7 @@ const user = {
   x: 0, // left side of canvas
   y: (canvas.height - 100) / 2, // -100 the height of paddle
   width: 10,
-  height: 100,
+  height: paddleHeightInput,
   score: 0,
   color: "WHITE",
 };
@@ -46,7 +62,7 @@ const com = {
   x: canvas.width - 10, // - width of paddle
   y: (canvas.height - 100) / 2, // -100 the height of paddle
   width: 10,
-  height: 100,
+  height: paddleHeightInput,
   score: 0,
   color: "WHITE",
 };
@@ -90,8 +106,7 @@ function resetBall() {
   ball.x = canvas.width / 2;
   ball.y = canvas.height / 2;
   ball.velocityX = -ball.velocityX;
-  ball.speed = userSpeedInput;
-  alert(ball.speed);
+  ball.speed = speedInput;
 }
 
 // draw the net
@@ -173,15 +188,18 @@ function update() {
 
     // change the X and Y velocity direction
     let direction = ball.x + ball.radius < canvas.width / 2 ? 1 : -1;
-    ball.velocityX = direction * ball.speed * Math.cos(angleRad);
-    ball.velocityY = ball.speed * Math.sin(angleRad);
+    ball.velocityX = direction * userSpeedInput * Math.cos(angleRad);
+    ball.velocityY = userSpeedInput * Math.sin(angleRad);
 
     // speed up the ball everytime a paddle hits it.
     ball.speed += 0.1;
+    // change the paddle heights when the ball collides
+    user.height = userPaddleHeightInput;
+    com.height = userPaddleHeightInput;
   }
 }
 
-// render function, the function that does al the drawing
+// render function, the function that does all the drawing
 function render() {
   // clear the canvas
   drawRect(0, 0, canvas.width, canvas.height, "#000");

@@ -11,9 +11,15 @@ body {
   bottom: 0;
 }
 
-.speed-input {
+.inputs-container {
   position: absolute;
   top: 22rem;
   left: 11rem;
-  width: 20%;
+  width: 10%;
+}
+
+.title-text {
+  color: black;
+  font-weight: bold;
+  font-size: 1.4rem;
 }

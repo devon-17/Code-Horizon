@@ -42,13 +42,7 @@
 
   <body>
     <nav
-      class="
-        navbar
-        fixed-top
-        navbar-expand-lg navbar-dark
-        bg-dark
-        font-monospace
-      "
+      class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark font-monospace"
     >
       <div class="container-fluid">
         <img
@@ -152,20 +146,37 @@
 
     <canvas id="pong" width="600" height="400"></canvas>
 
-    <div class="input-group mb-3 speed-input">
-      <div class="input-group-prepend">
-        <button class="btn btn-outline-dark" id="speed-btn" type="button">
-          Click to Apply
-        </button>
+    <div class="inputs-container">
+      <div>
+        <p class="font-monospace title-text">Speed of ball</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <input
+            type="number"
+            id="user-speed"
+            class="form-control user-speed"
+            placeholder="Speed of Ball"
+            value="7"
+            aria-label=""
+            aria-describedby="basic-addon1"
+          />
+        </div>
       </div>
-      <input
-        type="number"
-        id="user-speed"
-        class="form-control user-speed"
-        placeholder="Speed of Ball"
-        aria-label=""
-        aria-describedby="basic-addon1"
-      />
+      <div class="paddle-height-input-container">
+        <p class="font-monospace title-text">Speed of ball</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <input
+            type="number"
+            id="user-paddle-height"
+            class="form-control user-paddle-height"
+            placeholder="Height of Paddle"
+            value="100"
+            aria-label=""
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
     </div>
 
     <script src="pong.js"></script>
