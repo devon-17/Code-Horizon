@@ -1,0 +1,87 @@
+body {
+  background-color: rgb(32, 31, 31);
+}
+
+.canvas-drag-and-drop {
+  margin-top: 70px;
+  margin-left: 10px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.inventory {
+  background-color: #212529;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 99%;
+}
+
+.canvas {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.console {
+  background-color: #212529;
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.title-text {
+  padding: 5px 0 0 10px;
+}
+
+.inventory-element {
+  border: 2px solid gray;
+  border-radius: 5px;
+  cursor: move;
+  padding: 5px;
+  margin-top: 75px;
+  white-space: nowrap;
+  z-index: 2;
+  text-align: center;
+  inline-size: 250px;
+  position: relative;
+  left: 70px;
+}
+
+.row {
+  position: relative;
+  height: 100%;
+  width: 99%;
+}
+
+.moveable-element {
+  position: absolute;
+  cursor: move;
+  z-index: 9;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  inline-size: 200px;
+  color: black;
+}
+
+.moveable-element-header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  color: #fff;
+}
+
+.orange {
+  background-color: #ff5733;
+}
+
+.cursor {
+  cursor: pointer;
+}
