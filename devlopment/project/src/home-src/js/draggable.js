@@ -28,14 +28,9 @@ function init() {
   });
   function renderDiagram(diagram) {
     var canvasTitle = "<h2 class='title-text'>Code Canvas</h2>";
-    var console =
-      '<div class="console">' +
-      '<h2 class="title-text">Console</h2>' +
-      "</div>";
 
     canvas.empty();
     canvas.append(canvasTitle);
-    canvas.append(console);
 
     for (var d in diagram) {
       var node = diagram[d];

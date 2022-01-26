@@ -8,11 +8,11 @@ function init() {
 
     var consoleContent = $(".console-statement-content");
     var consoleSyntaxInput =
-      '<p>console.log(<input type="text" class="var-console-name-input" placeholder="var name">)</p>';
+      '<p style="text-align: left;">console.log(<input type="text" class="var-console-name-input" placeholder="var name">)</p>';
 
     var varContent = $(".var-content");
     var varSyntaxInput =
-      '<p>var <input type="text" class="var-syntax-name-input" placeholder="variable name"><input type="text" class="var-syntax-input" placeholder="variable msg"></p>';
+      '<p style="text-align: left;">var <input type="text" class="var-syntax-name-input" id="var-name"placeholder="name"> = <input type="text" class="var-syntax-input" placeholder="msg"></p>';
 
     if (!dropdown) return;
 

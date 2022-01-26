@@ -29,6 +29,7 @@ function init() {
     var console =
       '<div class="console">' +
       '<h2 class="title-text">Console</h2>' +
+      '<button type="button" class="btn btn-outline-success console-run-btn" onclick="getInputValue();">Run Code</button>' +
       "</div>";
 
     canvas.empty();
