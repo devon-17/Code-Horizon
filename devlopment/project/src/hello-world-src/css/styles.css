@@ -104,3 +104,7 @@ body {
   top: 10px;
   right: 10px;
 }
+
+.var-syntax-input {
+  line-break: auto;
+}

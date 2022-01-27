@@ -7,7 +7,7 @@
 // });
 
 function getInputValue() {
-  var console = $(".console");
+  var consoleOutput = $(".console");
   // const console = document.getElementsByClassName("console");
 
   // Selecting the input element and get its value
@@ -15,13 +15,23 @@ function getInputValue() {
   var varString = document.getElementById("var-string").value;
   var consoleVarName = document.getElementById("console-var-name").value;
 
-  if (console.length <= 1) {
-    // Displaying the value
-    if (varName == consoleVarName) {
-      console.append("Object: " + varString);
-      alert(console.length);
+  alert(consoleOutput.length);
+
+  var consoleOutputMsg = varString;
+  var index = consoleOutput.length;
+
+  while (index <= 2) {
+    if (varName && consoleVarName != "") {
+      // Displaying the value
+      if (varName == consoleVarName) {
+        consoleOutput.append(consoleOutputMsg);
+        index++;
+      } else {
+        alert("There is an error somewhere; Check var names");
+      }
     } else {
-      alert("There is an error somewhere");
+      alert("Put names and strings into slots");
     }
   }
+  console.log(consoleOutput.length);
 }
