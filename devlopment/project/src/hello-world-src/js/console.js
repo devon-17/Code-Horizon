@@ -7,9 +7,21 @@
 // });
 
 function getInputValue() {
+  var console = $(".console");
+  // const console = document.getElementsByClassName("console");
+
   // Selecting the input element and get its value
   var varName = document.getElementById("var-name").value;
+  var varString = document.getElementById("var-string").value;
+  var consoleVarName = document.getElementById("console-var-name").value;
 
-  // Displaying the value
-  alert(varName);
+  if (console.length <= 1) {
+    // Displaying the value
+    if (varName == consoleVarName) {
+      console.append("Object: " + varString);
+      alert(console.length);
+    } else {
+      alert("There is an error somewhere");
+    }
+  }
 }
