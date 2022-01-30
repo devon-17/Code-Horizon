@@ -108,3 +108,7 @@ body {
 .var-syntax-input {
   line-break: auto;
 }
+
+.output {
+  padding: 5px 0 0 10px;
+}

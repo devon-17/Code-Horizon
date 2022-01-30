@@ -15,23 +15,19 @@ function getInputValue() {
   var varString = document.getElementById("var-string").value;
   var consoleVarName = document.getElementById("console-var-name").value;
 
-  alert(consoleOutput.length);
+  var consoleOutputMsg = varString + "<br>";
+  var index = 0;
 
-  var consoleOutputMsg = varString;
-  var index = consoleOutput.length;
-
-  while (index <= 2) {
-    if (varName && consoleVarName != "") {
-      // Displaying the value
-      if (varName == consoleVarName) {
-        consoleOutput.append(consoleOutputMsg);
-        index++;
-      } else {
-        alert("There is an error somewhere; Check var names");
-      }
+  if (varName && consoleVarName != "") {
+    // Displaying the value
+    if (varName == consoleVarName) {
+      consoleOutput.append("Object: " + consoleOutputMsg);
+      index += 1;
     } else {
-      alert("Put names and strings into slots");
+      alert("There is an error somewhere, Check var names");
     }
+  } else {
+    alert("Please fill in fields");
   }
-  console.log(consoleOutput.length);
+  console.log(index);
 }
