@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Code Horizon -- Pong</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -19,20 +18,21 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-
-    <!-- links -->
-    <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="src/css/jquery-ui.css" />
+    <script src="src/js/jQuery/jquery.js"></script>
+    <script src="src/js/jQuery/jquery-ui.js"></script>
 
-    <!-- scripts -->
-    <script src="js/jQuery/jquery.js"></script>
-    <script src="js/jQuery/jquery-ui.js"></script>
-    <script src="js/draggable.js"></script>
-    <script src="js/dropdown.js"></script>
-    <script src="js/console.js"></script>
+    <!-- <style>
+      .audioPlayer {
+        display: block;
+        border-radius: 20px;
+        margin: 0 auto;
+      }
+    </style> -->
 
-    <title>Code Horizon -- Home</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
   </head>
 
   <body>
@@ -50,9 +50,9 @@
           class="navbar-brand img"
           width="40px"
           height="50px"
-          src="images/circle_logo.png"
+          src="images\circle_logo.png"
         />
-        <a class="navbar-brand" href="index.html">Code Horizon</a>
+        <a class="navbar-brand" href="../index.html">Code Horizon</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -75,34 +75,6 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Code Style
-              </a>
-              <ul
-                id="dropdown"
-                class="dropdown-menu nav-bar-dropdown"
-                aria-labelledby="navbarDropdown"
-              >
-                <li>
-                  <p class="dropdown-item cursor block-code">Block Code</p>
-                </li>
-                <li><p class="dropdown-item cursor syntax">Syntax</p></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Future Selection?</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-light"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
                 Lessons
               </a>
               <ul
@@ -111,17 +83,12 @@
                 aria-labelledby="navbarDropdown"
               >
                 <li>
-                  <a class="dropdown-item" href="../hello-world-src/index.html"
+                  <a class="dropdown-item" href="../hello-world/index.html"
                     >"Hello World";</a
                   >
                 </li>
                 <li>
-                  <a
-                    class="dropdown-item"
-                    href="../pong-src/index.html"
-                    target="_blank"
-                    >Pong</a
-                  >
+                  <a class="dropdown-item" href="index.html">Pong</a>
                 </li>
                 <li>
                   <hr class="dropdown-divider" />
@@ -147,19 +114,43 @@
       </div>
     </nav>
 
-    <div class="canvas-drag-and-drop text-light font-monospace">
-      <div class="row">
-        <div class="inventory col-3">
-          <h2 class="title-text">Elements</h2>
-          <p class="title-text">Drag & Drop Elements in</p>
-          <h3 class="inventory-element element-1">IF STATEMENTS</h3>
-          <h3 class="inventory-element element-2">VARIABLES</h3>
-          <h3 class="inventory-element element-3">FOR LOOPS</h3>
+    <canvas id="pong" width="600" height="400"></canvas>
+
+    <div class="inputs-container">
+      <div>
+        <p class="font-monospace title-text">Speed of ball</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <input
+            type="number"
+            id="user-speed"
+            class="form-control user-speed"
+            placeholder="Speed of Ball"
+            value="7"
+            aria-label=""
+            aria-describedby="basic-addon1"
+          />
         </div>
-        <div class="canvas col-9">
-          <h2 class="title-text">Code Canvas</h2>
+      </div>
+      <div class="paddle-height-input-container">
+        <p class="font-monospace title-text">Speed of ball</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <input
+            type="number"
+            id="user-paddle-height"
+            class="form-control user-paddle-height"
+            placeholder="Height of Paddle"
+            value="100"
+            aria-label=""
+            aria-describedby="basic-addon1"
+          />
         </div>
       </div>
     </div>
+
+    <script src="pong.js"></script>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
