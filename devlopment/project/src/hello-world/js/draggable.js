@@ -25,7 +25,7 @@ function init() {
     },
   });
   function renderDiagram(diagram) {
-    var canvasTitle = "<h2 class='title-text'>Code Canvas</h2>";
+    var canvasTitle = "<h3 class='title-text'>Code Canvas: </h3><p class='title-text'>Change Code Style to Syntax --> Input var Names and a string --> RUN CODE!<p/>";
     var console =
       '<div class="console">' +
       '<h2 class="title-text">Console</h2>' +
