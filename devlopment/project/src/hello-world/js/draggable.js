@@ -25,7 +25,7 @@ function init() {
     },
   });
   function renderDiagram(diagram) {
-    var canvasTitle = "<h3 class='title-text'>Code Canvas: </h3><p class='title-text'>Change Code Style to Syntax --> Input var Names and a string --> RUN CODE!<p/>";
+    var canvasTitle = "<h3 class='title-text'>Code Canvas: </h3>";
     var console =
       '<div class="console">' +
       '<h2 class="title-text">Console</h2>' +
@@ -43,23 +43,24 @@ function init() {
         '<div class="card moveable-element" style="width: 18rem; min-height: 10rem;">' +
         '<div class="card-body">' +
         '<h5 class="card-title">console.log();</h5>' +
-        '<p class="card-text console-statement-content">Outputs a message to the web console</p>' +
-        '<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log" target="_blank" class="btn btn-outline-dark">More Info</a>' +
+        '<p class="card-text console-statement-content" style="text-align: left;">' +
+        'console.log(<input type="text" class="var-console-name-input" id="console-var-name" placeholder="var name">)' +
+        "</p>" +
+        '<a href="https://developer.mozilla.org/en-US/docs/Web/API/Console/log" target="_blank"' +
+        'class="btn btn-outline-dark">More Info</a>' +
         "</div>";
       ("</div>");
-
-      // var ifStatement =
-      //   '<div class="moveable-element">' +
-      //   '<div class="moveable-element-header orange">IF STATEMENT</div>' +
-      //   '<p class="if-statement-content">if something happens then something else happens</p>' +
-      //   "</div>";
 
       var variable =
         '<div class="card moveable-element" style="width: 18rem; min-height: 10rem;">' +
         '<div class="card-body">' +
         '<h5 class="card-title">VARIABLES</h5>' +
-        '<p class="card-text var-content">A way to easily store data with a semantic name of your choosing</p>' +
-        '<a href="https://launchschool.com/books/ruby/read/variables" target="_blank" class="btn btn-outline-dark">More Info</a>' +
+        '<p class="card-text var-content" style="text-align: left;">' +
+        'var <input type="text" class="var-syntax-name-input" id="var-name"' +
+        'placeholder="name"> = <input type="text" class="var-syntax-input" id="var-string" placeholder="msg">' +
+        "</p>" +
+        '<a href="https://launchschool.com/books/ruby/read/variables" target="_blank"' +
+        'class="btn btn-outline-dark">More Info</a>' +
         "</div>";
       ("</div>");
 
