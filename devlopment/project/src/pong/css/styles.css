@@ -20,3 +20,7 @@ body {
   top: 22em;
   left: 3em;
 }
+
+.game-over-txt {
+  background-color: #212529;
+}
