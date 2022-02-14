@@ -23,14 +23,6 @@
     <script src="src/js/jQuery/jquery.js"></script>
     <script src="src/js/jQuery/jquery-ui.js"></script>
 
-    <!-- <style>
-      .audioPlayer {
-        display: block;
-        border-radius: 20px;
-        margin: 0 auto;
-      }
-    </style> -->
-
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" />
   </head>
@@ -108,43 +100,30 @@
       </div>
     </nav>
 
-    <canvas id="pong" width="600" height="400"></canvas>
-
-    <div class="inputs-container">
-      <div>
-        <p class="font-monospace title-text">Speed of ball</p>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"></div>
-          <input
-            type="number"
-            id="user-speed"
-            class="form-control user-speed"
-            placeholder="Speed of Ball"
-            value="7"
-            aria-label=""
-            aria-describedby="basic-addon1"
-          />
+    <div class="inputs">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Game Over Text</span
+          >
         </div>
+        <input
+          type="text"
+          id="user-game-over-txt"
+          class="form-control user-game-over-txt input"
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+          value="game over"
+          onchange="userInput();"
+        />
       </div>
-      <div class="paddle-height-input-container">
-        <p class="font-monospace title-text">Speed of ball</p>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"></div>
-          <input
-            type="number"
-            id="user-paddle-height"
-            class="form-control user-paddle-height"
-            placeholder="Height of Paddle"
-            value="100"
-            aria-label=""
-            aria-describedby="basic-addon1"
-          />
-        </div>
-      </div>
+      <!-- <button type="button" class="btn btn-success" onclick="userInput();">
+        Apply Changes
+      </button> -->
     </div>
 
-    <script src="pong.js"></script>
-
+    <canvas width="50%" height="50%" class="ctx"></canvas>
+    <script type="text/javascript" src="js/audio.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

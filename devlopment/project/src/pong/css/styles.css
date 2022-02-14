@@ -1,25 +1,22 @@
 body {
   background-color: dimgray;
-}
-#pong {
-  border: 2px solid #fff;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  text-align: center;
 }
 
-.inputs-container {
-  position: absolute;
-  top: 22rem;
-  left: 11rem;
-  width: 10%;
+.audioPlayer {
+  display: block;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
-.title-text {
-  color: black;
-  font-weight: bold;
-  font-size: 1.4rem;
+.ctx {
+  margin: 7em 0 0 0;
+}
+.input {
+  width: 20%;
+}
+.inputs {
+  position: absolute;
+  top: 22em;
+  left: 3em;
 }
