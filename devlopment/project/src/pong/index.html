@@ -119,13 +119,27 @@
           class="form-control user-game-over-txt input"
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
-          value="game over"
-          onchange="userInput();"
+          value="Won!"
         />
       </div>
-      <!-- <button type="button" class="btn btn-success" onclick="userInput();">
+      <div class="input-group mb-3 game-over-txt">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Ball Speed</span
+          >
+        </div>
+        <input
+          type="text"
+          id="user-ball-speed"
+          class="form-control input"
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+          value="9"
+        />
+      </div>
+      <button type="button" class="btn btn-success" onclick="userInput();">
         Apply Changes
-      </button> -->
+      </button>
     </div>
 
     <canvas class="ctx"></canvas>

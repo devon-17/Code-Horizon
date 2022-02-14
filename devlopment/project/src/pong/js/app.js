@@ -1,9 +1,10 @@
 // user input's
-var userEndGameText = document.getElementById("user-game-over-txt").value;
-var gameOverTxt;
+var userEndGameText = "Won!"; // default val
+var userSpeedInput = 9; // default val
 
 function userInput() {
-  alert(userEndGameText);
+  userEndGameText = document.getElementById("user-game-over-txt").value;
+  userSpeedInput = document.getElementById("user-ball-speed").value;
 }
 
 // Global Variables
@@ -231,7 +232,7 @@ var Game = {
       if (!rounds[this.round + 1]) {
         this.over = true;
         setTimeout(function () {
-          Pong.endGameMenu("You " + gameOverTxt);
+          Pong.endGameMenu("You " + userEndGameText);
         }, 1000);
       } else {
         // If there is another round, reset all the values and increment the round number.
@@ -249,7 +250,7 @@ var Game = {
     else if (this.paddle.score === rounds[this.round]) {
       this.over = true;
       setTimeout(function () {
-        Pong.endGameMenu("The Computer " + gameOverTxt);
+        Pong.endGameMenu("The Computer " + userEndGameText);
       }, 1000);
     }
   },
