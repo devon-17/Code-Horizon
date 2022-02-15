@@ -5,8 +5,6 @@ var userSpeedInput = 9; // default val
 function userInput() {
   userEndGameText = document.getElementById("user-game-over-txt").value;
   userSpeedInput = parseInt(document.getElementById("user-ball-speed").value);
-
-  alert(this.ball.speed);
 }
 
 // Global Variables
@@ -31,7 +29,7 @@ var Ball = {
       y: this.canvas.height / 2 - 9,
       moveX: DIRECTION.IDLE,
       moveY: DIRECTION.IDLE,
-      speed: incrementedSpeed || 9,
+      speed: incrementedSpeed || userSpeedInput,
     };
   },
 };
