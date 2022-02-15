@@ -5,6 +5,8 @@ var userSpeedInput = 9; // default val
 function userInput() {
   userEndGameText = document.getElementById("user-game-over-txt").value;
   userSpeedInput = document.getElementById("user-ball-speed").value;
+
+  // alert(this.ball.speed);
 }
 
 // Global Variables
@@ -122,7 +124,7 @@ var Game = {
     // Change the canvas color;
     this.context.fillStyle = "#ffffff";
 
-    // Draw the 'press any key to begin' text
+    // Draw the 'press ALT key to begin' text
     this.context.fillText(
       "Press ALT start the game",
       this.canvas.width / 2,
