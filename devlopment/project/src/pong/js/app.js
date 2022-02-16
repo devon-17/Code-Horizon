@@ -226,7 +226,7 @@ var Game = {
 
     // Handle the end of round transition
     // Check to see if the player won the round.
-    if (this.player.score === rounds[this.round]) {
+    if (this.player.score >= rounds[this.round]) {
       // Check to see if there are any more rounds/levels left and display the victory screen if
       // there are not.
       if (!rounds[this.round + 1]) {
@@ -247,7 +247,7 @@ var Game = {
       }
     }
     // Check to see if the paddle/AI has won the round.
-    else if (this.paddle.score === rounds[this.round]) {
+    else if (this.paddle.score >= rounds[this.round]) {
       this.over = true;
       setTimeout(function () {
         Pong.endGameMenu("The Computer " + userEndGameText);
