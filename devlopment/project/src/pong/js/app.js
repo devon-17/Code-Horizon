@@ -2,9 +2,12 @@
 var userEndGameText = "Won!"; // default val
 var userSpeedInput = 9; // default val
 
+document.getElementById("user-ball-speed").addEventListener("change", (e) => {
+  userSpeedInput = parseInt(e.target.value);
+});
+
 function userInput() {
   userEndGameText = document.getElementById("user-game-over-txt").value;
-  userSpeedInput = parseInt(document.getElementById("user-ball-speed").value);
 }
 
 // Global Variables
@@ -17,7 +20,7 @@ var DIRECTION = {
 };
 
 var rounds = [1, 5, 3, 3, 2];
-var colors = ["#1abc9c", "#2ecc71", "#3498db", "#e74c3c", "#9b59b6"];
+var colors = ["#581845", "#900c3f", "#c70039", "#ff5733"];
 
 // The ball object (The cube that bounces back and forth)
 var Ball = {
@@ -227,8 +230,7 @@ var Game = {
     // Handle the end of round transition
     // Check to see if the player won the round.
     if (this.player.score >= rounds[this.round]) {
-      // Check to see if there are any more rounds/levels left and display the victory screen if
-      // there are not.
+      // if there are no more round left player wins and set the text to player winning
       if (!rounds[this.round + 1]) {
         this.over = true;
         setTimeout(function () {
