@@ -12202,3 +12202,8 @@ body {
     rgba(0, 0, 0, 0.8) 100%
   );
 }
+
+.achievements-txt {
+  padding-top: 2rem;
+  margin-left: 20rem;
+}
