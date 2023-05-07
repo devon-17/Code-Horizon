@@ -1,0 +1,26 @@
+body {
+  background-color: dimgray;
+  text-align: center;
+}
+
+.audioPlayer {
+  display: block;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.ctx {
+  margin: 7em 0 0 0;
+}
+.input {
+  width: 20%;
+}
+.inputs {
+  position: absolute;
+  top: 22em;
+  left: 3em;
+}
+
+.game-over-txt {
+  background-color: #212529;
+}
